@@ -1,13 +1,23 @@
 ﻿// Данная программа из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам.
-// функция заполнения массива элементами
-void fill_array(string [] arr)
+
+void fill_array(string [] arr) // функция заполнения массива элементами
 {
   for(int i=0; i < arr.Length ; i++)
    {
-      Console.Write("Введите новую строку ");
+      Console.Write("Введите строку " + i + " : ");
       arr[i] = Console.ReadLine();
    } 
 } 
+
+ int q_string(string arr) // функция подсчета количества символов в строке
+ { 
+   int quantity = 0; // переменная для подсчета символов в строке
+   foreach(var ch in arr)
+   {
+      quantity++;
+   }
+   return quantity;
+ }
 
 // основная программа
 Console.Clear();
@@ -17,19 +27,11 @@ int size = Convert.ToInt32(Console.ReadLine());
 string[] arrString, arrNewString; 
 arrString = new string[size];
 arrNewString = new string[size];
-fill_array(arrString);
-
-// подсчитываем количество символов в строках
- int j = 0; // индекс для нового массива
-for(int i=0; i < size ; i++)
+fill_array(arrString); // заполняем массив 
+int j = 0; // индекс для нового массива
+for(int i=0; i < size ; i++) // заполняем новый массив элементами в соответствии с условием задания
 {
-   int quantity = 0; // переменная для подсчета символов в строке
-  
-   foreach(var ch in arrString[i] )
-   {
-      quantity++;
-   }
-   if(quantity <= 3) // если количество символов <=3 записываем элемент в новый массив
+   if(q_string(arrString[i]) <= 3) // если количество символов <=3 записываем элемент в новый массив
      {
        arrNewString[j] = arrString[i];
        j++;

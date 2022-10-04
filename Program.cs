@@ -1,7 +1,8 @@
 ﻿// Данная программа из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам. 
+Console.Clear();
 Console.Write("Введите количество строк: ");
 int size = Convert.ToInt32(Console.ReadLine());
-// объявляем массив
+// объявляем массивы
 string[] arrString, arrNewString; 
 arrString = new string[size];
 arrNewString = new string[size];
@@ -30,6 +31,8 @@ for(int i=0; i < size ; i++)
      } 
 }
 // выводим новый массив
+Console.WriteLine();
+Console.WriteLine("Новый массив:");
 for(int i=0; i < j ; i++)
 {
    Console.WriteLine(arrNewString[i]);

@@ -1,4 +1,15 @@
-﻿// Данная программа из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам. 
+﻿// Данная программа из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам.
+// функция заполнения массива элементами
+void fill_array(string [] arr)
+{
+  for(int i=0; i < arr.Length ; i++)
+   {
+      Console.Write("Введите новую строку ");
+      arr[i] = Console.ReadLine();
+   } 
+} 
+
+// основная программа
 Console.Clear();
 Console.Write("Введите количество строк: ");
 int size = Convert.ToInt32(Console.ReadLine());
@@ -6,13 +17,7 @@ int size = Convert.ToInt32(Console.ReadLine());
 string[] arrString, arrNewString; 
 arrString = new string[size];
 arrNewString = new string[size];
-
-// заполняем массив элементами
-for(int i=0; i < size ; i++)
-{
-   Console.Write("Введите новую строку ");
-   arrString[i] = Console.ReadLine();
-}
+fill_array(arrString);
 
 // подсчитываем количество символов в строках
  int j = 0; // индекс для нового массива

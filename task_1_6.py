@@ -9,7 +9,5 @@ for i in str_arifm:
    if i not in a:
       print('Неверное выражение') 
       exit()
-   #else:
-      
 print(eval(str_arifm))
       
